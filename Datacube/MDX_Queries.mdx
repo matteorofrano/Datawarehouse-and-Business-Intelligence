@@ -1,0 +1,42 @@
+--1)Show the city with the highest crime gravity for each state.
+
+select [Measures].[Crime Gravity] on columns,
+nonempty(generate([Geography].[State].[State], 
+topcount(
+([Geography].[State].currentmember, [Geography].[City State].[City State]),
+1,
+[Measures].[Crime Gravity])), [Measures].[Crime Gravity]) on rows
+from [Group ID 14 DB]
+
+
+
+--2)For each state, show the incident with the highest ratio between his total crime gravity and the average crime gravity of that state.
+
+with member crime_average as avg([Incident].[Incident Id].[Incident Id], [Measures].[Crime Gravity])
+	member ratio as [Measures].[Crime Gravity]/crime_average
+select ratio on columns,
+nonempty(generate([Geography].[State].[State], 
+topcount(
+([Geography].[State].currentmember,
+[Incident].[Incident Id].[Incident Id]),
+1,
+[Measures].[Crime Gravity]))) on rows
+from [Group ID 14 DB]
+
+
+
+
+
+--3)For each city, show the difference between each quarter’s total crime gravity and the previous quarter’s total crime gravity.
+
+with member diff_prev as
+([Date].[TIME_hierarchy].currentmember, [Measures].[Crime Gravity])-
+([Date].[TIME_hierarchy].prevmember, [Measures].[Crime Gravity])
+
+select {[Measures].[Crime Gravity], diff_prev} on columns,
+nonempty((
+      [Geography].[City State].[City State],
+	  [Date].[Year].[Year], --for a better understanding in the results (quarter 1 and 2 are related only if they are from the same year)
+      [Date].[TIME_hierarchy].[Quarter]
+    )) on rows
+from [Group ID 14 DB]

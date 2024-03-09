@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "POLICE_CUBE", "POLICE_CUBE\POLICE_CUBE.dwproj", "{A890D24A-3D55-45D2-BE29-30E5C29CF4C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A890D24A-3D55-45D2-BE29-30E5C29CF4C0}.Development|Default.ActiveCfg = Development
+		{A890D24A-3D55-45D2-BE29-30E5C29CF4C0}.Development|Default.Build.0 = Development
+		{A890D24A-3D55-45D2-BE29-30E5C29CF4C0}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E4B0367-6271-4CAA-BAE4-E7BCA97AFA90}
+	EndGlobalSection
+EndGlobal
