@@ -1,0 +1,9 @@
+Police.csv contains the main body of data: a table with data about gun violence incidents
+between January 2013 and March 2018 in the US. The same table also includes information
+about the victims, the guns, and the locations. The file dates.xml maps each date id from
+the Police.csv file to a real date.
+Finally, the files partecipant age.json (F1), partecipant type.json (F2), and partecipant status.json (F3) are three dictionaries containing the data necessary to compute
+the crime gravity attribute.
+The following assignments aim to build and deploy the schema on server lds.di.unipi.it.
+In the provided data are present missing values, useless information, and has been needed
+to integrate additional data from other sources.
