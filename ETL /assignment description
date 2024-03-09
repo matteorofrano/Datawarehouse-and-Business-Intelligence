@@ -1,0 +1,9 @@
+In this section are provided the SSIS files used to solve some ETL tasks.
+
+1) For every type of gun, determine the number of custodies of young participants
+(under the age of 18).
+
+2) A city is classified as dangerous if the total gravity of custodies within that city is
+higher than the average gravity for that city’s state. List all the dangerous cities.
+
+3) For each state, determine the gun type with the highest total gravity.
